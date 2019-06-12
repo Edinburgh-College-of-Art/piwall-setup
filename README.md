@@ -34,8 +34,8 @@ The `.piwall` file is the same for each Raspberry Pi and it has the format
 
 ```bash
 [Wall_Name]
-width=Total_width_in_pixels
-height=Total_height_in_pixels
+width=Video-Width-Resolution
+height=Video-Height-Resolution
 x=X-coordinate-screen-offset
 y=Y-coordinate-screen-offset
 
