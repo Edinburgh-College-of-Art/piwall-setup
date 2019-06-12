@@ -1,0 +1,27 @@
+# wall definition for 2x1 screens with bezel compensation
+# video 1280 × 736
+[2bez_wall]
+width=1280
+height=1472
+x=0
+y=800
+
+# corresponding tile definitions
+[2bez_1]
+wall=2bez_wall
+width=1280
+height=1472
+x=0
+y=0
+
+[2bez_2]
+wall=2bez_wall
+width=1576
+height=1680
+x=-130
+y=1472
+
+# config
+[2bez]
+pi1=2bez_1
+pi2=2bez_2
