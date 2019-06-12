@@ -160,3 +160,14 @@ avconv -re -i $FILENAME -vcodec copy -f avi -an udp://239.0.1.23:1234
 ```bash
 pwomxplayer --config=2x1 udp://239.0.1.23:1234?buffer_size=1200000B
 ```
+
+### Rotate screen
+
+in `sudo nano /boot/config.txt`
+add
+```
+# display_rotate=0
+# display_rotate=1
+# display_rotate=2
+# display_rotate=3
+```
