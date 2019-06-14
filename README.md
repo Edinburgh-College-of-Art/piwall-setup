@@ -7,6 +7,7 @@ Setup Documentation and example config files for Raspberry Pi Video Wall
 Setup documentation can be found here
 
 - [PiWall Setup](http://www.piwall.co.uk/information/installation)
+- [In-depth Setup](https://groups.google.com/forum/?hl=en-GB#!searchin/piwall-users/sync%7Csort:date/piwall-users/J942lhOWTIA/p6VjmzecAgAJ)
 
 The `setup.sh` script should cover everything required to setup each Raspberry Pi.
 
@@ -155,19 +156,36 @@ pi2=tile_2
 avconv -re -i $FILENAME -vcodec copy -f avi -an udp://239.0.1.23:1234
 ```
 
+**infinite loop**
+
+```bash
+while true; do avconv -re -i $FILENAME -vcodec copy -f avi -an udp://239.0.1.23:1234; sleep 2; done
+```
+
 **Tile function call**
 
 ```bash
-pwomxplayer --config=2x1 udp://239.0.1.23:1234?buffer_size=1200000B
+pwomxplayer -y --config=2x1 udp://239.0.1.23:1234?buffer_size=1200000B
 ```
 
 ### Rotate screen
 
-in `sudo nano /boot/config.txt`
-add
+in `sudo nano /boot/config.txt` add
+
+```shell
+display_rotate=0 # no rotation
+# display_rotate=1 # 90º
+# display_rotate=2 # 180º
+# display_rotate=3 # 270º
 ```
-# display_rotate=0
-# display_rotate=1
-# display_rotate=2
-# display_rotate=3
-```
+
+## Use Cases
+
+- Sync a video with max resolution 1920 x 1080 over multiple displays
+- Create a video wall from a source with max resolution 1920 x 1080
+
+## Alternatives
+
+1. [omxplayer-sync](https://github.com/turingmachine/omxplayer-sync)
+2. [omxplayer-sync-2](https://github.com/pukster/omxplayer-sync-2)
+3. [RTSP + omxplayer](https://raspberry-projects.com/pi/software_utilities/media-players/omxplayer)

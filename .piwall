@@ -7,21 +7,37 @@ x=0
 y=0
 
 # corresponding tile definitions
+[tile_0] # full screen tile
+wall=2x1_wall
+width=1280
+height=720
+x=0
+y=0
+
 [tile_1]
 wall=2x1_wall
 width=1280
 height=720
 x=0
-y=-360
+y=-315
 
 [tile_2]
 wall=2x1_wall
-width=1587
-height=892
-x=-153
-y=360
+width=560
+height=315
+x=0
+y=555
+
+[tile_3]
+wall=2x1_wall
+width=560
+height=315
+x=640
+y=6092
 
 # config
 [2x1]
+pi0=tile_0
 pi1=tile_1
 pi2=tile_2
+pi3=tile_3
